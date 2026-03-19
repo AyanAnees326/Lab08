@@ -18,4 +18,20 @@ public class CustomListTest {
         assertTrue(customList.hasCity(city1));
         assertFalse(customList.hasCity(city2));
     }
+
+    @Test
+    public void testDeleteCity() {
+        CustomList customList = new CustomList();
+
+        City city1 = new City("Lahore", "Punjab");
+        City city2 = new City("Karachi", "Sindh");
+
+        customList.addCity(city1);
+        customList.addCity(city2);
+
+        customList.deleteCity(city1);
+
+        assertFalse(customList.hasCity(city1));
+        assertTrue(customList.hasCity(city2));
+    }
 }
